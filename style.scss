@@ -21,6 +21,23 @@ $email-button-color: #e67654;
 $password-button-color: #625cff;
 $submit-button-color: #ff5f5f;
 
+@mixin front-face {
+  display: flex;
+  transform: rotateY(0deg);
+}
+@mixin left-face {
+  display: flex;
+  box-shadow: none;
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
+}
+@mixin right-face {
+  display: flex;
+  box-shadow: none;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+
 body {
   margin: 0px;
   font-family: "Nunito";
@@ -82,17 +99,28 @@ body {
   height: $cardSize;
   position: relative;
   .card {
+    transition: 1s all;
     padding: 20px;
     background: white;
     border-radius: 10px;
     position: absolute;
     width: $cardSize;
     height: $cardSize;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
     box-sizing: border-box;
+    transform-style: preserve-3d;
+    perspective: 1500px;
+    .card-child-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      perspective: inherit;
+      transform-style: preserve-3d;
+      transform: translateZ(100px) scale(0.85);
+      backface-visibility: hidden;
+    }
     input {
       margin-bottom: 20px;
       font-size: 13px;
@@ -235,10 +263,10 @@ body {
 //card state styling
 .stepper.state-email {
   #email {
-    display: flex;
+    @include front-face;
   }
   #password {
-    display: none;
+    @include right-face;
   }
   #submit {
     display: none;
@@ -249,13 +277,13 @@ body {
 }
 .stepper.state-password {
   #email {
-    display: none;
+    @include left-face;
   }
   #password {
-    display: flex;
+    @include front-face;
   }
   #submit {
-    display: none;
+    @include right-face;
   }
   #thankyou {
     display: none;
@@ -266,13 +294,13 @@ body {
     display: none;
   }
   #password {
-    display: none;
+    @include left-face;
   }
   #submit {
-    display: flex;
+    @include front-face;
   }
   #thankyou {
-    display: none;
+    @include right-face;
   }
 }
 .stepper.state-thankyou {
@@ -283,9 +311,9 @@ body {
     display: none;
   }
   #submit {
-    display: none;
+    @include left-face;
   }
   #thankyou {
-    display: flex;
+    @include front-face;
   }
 }

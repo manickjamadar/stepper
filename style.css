@@ -60,17 +60,28 @@ body {
   position: relative;
 }
 .cards-wrapper .card {
+  transition: 1s all;
   padding: 20px;
   background: white;
   border-radius: 10px;
   position: absolute;
   width: 400px;
   height: 400px;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  perspective: 1500px;
+}
+.cards-wrapper .card .card-child-container {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  box-sizing: border-box;
+  perspective: inherit;
+  transform-style: preserve-3d;
+  transform: translateZ(100px) scale(0.85);
+  backface-visibility: hidden;
 }
 .cards-wrapper .card input {
   margin-bottom: 20px;
@@ -175,9 +186,13 @@ body {
 
 .stepper.state-email #email {
   display: flex;
+  transform: rotateY(0deg);
 }
 .stepper.state-email #password {
-  display: none;
+  display: flex;
+  box-shadow: none;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
 }
 .stepper.state-email #submit {
   display: none;
@@ -187,13 +202,20 @@ body {
 }
 
 .stepper.state-password #email {
-  display: none;
+  display: flex;
+  box-shadow: none;
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
 }
 .stepper.state-password #password {
   display: flex;
+  transform: rotateY(0deg);
 }
 .stepper.state-password #submit {
-  display: none;
+  display: flex;
+  box-shadow: none;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
 }
 .stepper.state-password #thankyou {
   display: none;
@@ -203,13 +225,20 @@ body {
   display: none;
 }
 .stepper.state-submit #password {
-  display: none;
+  display: flex;
+  box-shadow: none;
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
 }
 .stepper.state-submit #submit {
   display: flex;
+  transform: rotateY(0deg);
 }
 .stepper.state-submit #thankyou {
-  display: none;
+  display: flex;
+  box-shadow: none;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
 }
 
 .stepper.state-thankyou #email {
@@ -219,8 +248,12 @@ body {
   display: none;
 }
 .stepper.state-thankyou #submit {
-  display: none;
+  display: flex;
+  box-shadow: none;
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
 }
 .stepper.state-thankyou #thankyou {
   display: flex;
+  transform: rotateY(0deg);
 }
