@@ -1,0 +1,291 @@
+$barSize: 4px;
+$ballSize: 32px;
+$cardSize: 400px;
+$activeProgressColor: #9e9aff;
+$disableProgressColor: #cbcbcb;
+$successProgressColor: #57d06d;
+
+$email-first-color: #ffefef;
+$email-second-color: #ffbca8;
+
+$password-first-color: #dbdbff;
+$password-second-color: #937afd;
+
+$submit-first-color: #ffefef;
+$submit-second-color: #ff9db0;
+
+$thankyou-first-color: #a0e590;
+$thankyou-second-color: #55cc83;
+
+$email-button-color: #e67654;
+$password-button-color: #625cff;
+$submit-button-color: #ff5f5f;
+
+body {
+  margin: 0px;
+  font-family: "Nunito";
+  box-sizing: border-box;
+}
+
+.stepper {
+  width: 100vw;
+  text-align: center;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+//progress styling
+.progress {
+  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 26px;
+  .ball-name,
+  .bar,
+  .ball {
+    transition: 0.4s all;
+  }
+  .ball-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .ball-name {
+    margin-right: 10px;
+    color: $disableProgressColor;
+  }
+  .ball {
+    display: block;
+    width: $ballSize;
+    height: $ballSize;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: $ballSize;
+  }
+  .bar {
+    width: $barSize;
+    height: $cardSize / 2 - (1.5 * $ballSize);
+    margin-right: ($ballSize - $barSize)/2;
+  }
+  .ball,
+  .bar {
+    background: $disableProgressColor;
+  }
+}
+//card styling
+.cards-wrapper {
+  width: $cardSize;
+  height: $cardSize;
+  position: relative;
+  .card {
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    position: absolute;
+    width: $cardSize;
+    height: $cardSize;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
+    input {
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: #808080;
+    }
+    input,
+    button {
+      display: block;
+      width: 250px;
+      box-sizing: border-box;
+      padding: 12px 20px;
+      border-radius: 25px;
+      border: none;
+      outline: none;
+      box-shadow: 5px 8px 18px rgba(0, 0, 0, 0.18);
+      letter-spacing: 1.5px;
+    }
+    button {
+      font-size: 13px;
+      // font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+  }
+  .card#email {
+    box-shadow: 6px 6px 40px darken($color: $email-first-color, $amount: 7);
+    background-image: linear-gradient(
+      135deg,
+      $email-first-color,
+      $email-second-color
+    );
+    button {
+      background: $email-button-color;
+    }
+  }
+  .card#password {
+    box-shadow: 6px 6px 40px darken($color: $password-first-color, $amount: 7);
+    background-image: linear-gradient(
+      135deg,
+      $password-first-color,
+      $password-second-color
+    );
+    button {
+      background: $password-button-color;
+    }
+  }
+  .card#submit {
+    box-shadow: 6px 6px 40px darken($color: $submit-first-color, $amount: 7);
+    background-image: linear-gradient(
+      135deg,
+      $submit-first-color,
+      $submit-second-color
+    );
+    button {
+      background: $submit-button-color;
+    }
+  }
+  .card#thankyou {
+    box-shadow: 6px 6px 40px darken($color: $thankyou-first-color, $amount: 7);
+    background-image: linear-gradient(
+      135deg,
+      $thankyou-first-color,
+      $thankyou-second-color
+    );
+    p {
+      font-size: 18px;
+      color: white;
+    }
+  }
+}
+
+//There is four states - email,password,submit,thankyou
+
+//progress state styling
+.stepper.state-email {
+  .progress {
+    .ball-wrapper.email {
+      .ball-name {
+        color: $activeProgressColor;
+      }
+      .ball {
+        background: $activeProgressColor;
+      }
+    }
+  }
+}
+.stepper.state-password {
+  .progress {
+    .ball-wrapper.email,
+    .ball-wrapper.password {
+      .ball-name {
+        color: $activeProgressColor;
+      }
+      .ball {
+        background: $activeProgressColor;
+      }
+    }
+    .bar.password {
+      background: $activeProgressColor;
+    }
+  }
+}
+.stepper.state-submit {
+  .progress {
+    .ball-wrapper.email,
+    .ball-wrapper.password,
+    .ball-wrapper.submit {
+      .ball-name {
+        color: $activeProgressColor;
+      }
+      .ball {
+        background: $activeProgressColor;
+      }
+    }
+    .bar.password,
+    .bar.submit {
+      background: $activeProgressColor;
+    }
+  }
+}
+.stepper.state-thankyou {
+  .progress {
+    .ball-wrapper.email,
+    .ball-wrapper.password,
+    .ball-wrapper.submit {
+      .ball-name {
+        color: $successProgressColor;
+      }
+      .ball {
+        background: $successProgressColor;
+      }
+    }
+    .bar.password,
+    .bar.submit {
+      background: $successProgressColor;
+    }
+  }
+}
+
+//card state styling
+.stepper.state-email {
+  #email {
+    display: flex;
+  }
+  #password {
+    display: none;
+  }
+  #submit {
+    display: none;
+  }
+  #thankyou {
+    display: none;
+  }
+}
+.stepper.state-password {
+  #email {
+    display: none;
+  }
+  #password {
+    display: flex;
+  }
+  #submit {
+    display: none;
+  }
+  #thankyou {
+    display: none;
+  }
+}
+.stepper.state-submit {
+  #email {
+    display: none;
+  }
+  #password {
+    display: none;
+  }
+  #submit {
+    display: flex;
+  }
+  #thankyou {
+    display: none;
+  }
+}
+.stepper.state-thankyou {
+  #email {
+    display: none;
+  }
+  #password {
+    display: none;
+  }
+  #submit {
+    display: none;
+  }
+  #thankyou {
+    display: flex;
+  }
+}
