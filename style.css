@@ -1,40 +1,67 @@
 body {
   margin: 0px;
   font-family: "Nunito";
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .stepper {
   width: 100vw;
   text-align: center;
   height: 100vh;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .progress {
   display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   margin: 26px;
 }
+
 .progress .ball-name,
 .progress .bar,
 .progress .ball {
+  -webkit-transition: 0.4s all;
   transition: 0.4s all;
 }
+
 .progress .ball-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .progress .ball-name {
   margin-right: 10px;
   color: #cbcbcb;
 }
+
 .progress .ball {
   display: block;
   width: 32px;
@@ -44,11 +71,13 @@ body {
   text-align: center;
   line-height: 32px;
 }
+
 .progress .bar {
   width: 4px;
   height: 152px;
   margin-right: 14px;
 }
+
 .progress .ball,
 .progress .bar {
   background: #cbcbcb;
@@ -59,7 +88,9 @@ body {
   height: 400px;
   position: relative;
 }
+
 .cards-wrapper .card {
+  -webkit-transition: 1s all;
   transition: 1s all;
   padding: 20px;
   background: white;
@@ -67,69 +98,103 @@ body {
   position: absolute;
   width: 400px;
   height: 400px;
-  box-sizing: border-box;
-  transform-style: preserve-3d;
-  perspective: 1500px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 1500px;
+          perspective: 1500px;
 }
+
 .cards-wrapper .card .card-child-container {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  perspective: inherit;
-  transform-style: preserve-3d;
-  transform: translateZ(100px) scale(0.85);
-  backface-visibility: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-perspective: inherit;
+          perspective: inherit;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: translateZ(100px) scale(0.85);
+          transform: translateZ(100px) scale(0.85);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
+
 .cards-wrapper .card input {
   margin-bottom: 20px;
   font-size: 13px;
   color: #4c4c4c;
 }
+
 .cards-wrapper .card input,
 .cards-wrapper .card button {
   display: block;
   width: 250px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 12px 20px;
   border-radius: 25px;
   border: none;
   outline: none;
-  box-shadow: 5px 8px 18px rgba(0, 0, 0, 0.18);
+  -webkit-box-shadow: 5px 8px 18px rgba(0, 0, 0, 0.18);
+          box-shadow: 5px 8px 18px rgba(0, 0, 0, 0.18);
   letter-spacing: 1.5px;
 }
+
 .cards-wrapper .card button {
   font-size: 13px;
   color: white;
   cursor: pointer;
 }
+
 .cards-wrapper .card#email {
-  box-shadow: 6px 6px 40px #ffcbcb;
+  -webkit-box-shadow: 6px 6px 40px #ffcbcb;
+          box-shadow: 6px 6px 40px #ffcbcb;
   background-image: linear-gradient(135deg, #ffefef, #ffbca8);
 }
+
 .cards-wrapper .card#email button {
   background: #e67654;
 }
+
 .cards-wrapper .card#password {
-  box-shadow: 6px 6px 40px #b7b7ff;
+  -webkit-box-shadow: 6px 6px 40px #b7b7ff;
+          box-shadow: 6px 6px 40px #b7b7ff;
   background-image: linear-gradient(135deg, #dbdbff, #937afd);
 }
+
 .cards-wrapper .card#password button {
   background: #625cff;
 }
+
 .cards-wrapper .card#submit {
-  box-shadow: 6px 6px 40px #ffcbcb;
+  -webkit-box-shadow: 6px 6px 40px #ffcbcb;
+          box-shadow: 6px 6px 40px #ffcbcb;
   background-image: linear-gradient(135deg, #ffefef, #ff9db0);
 }
+
 .cards-wrapper .card#submit button {
   background: #ff5f5f;
 }
+
 .cards-wrapper .card#thankyou {
-  box-shadow: 6px 6px 40px #87de73;
+  -webkit-box-shadow: 6px 6px 40px #87de73;
+          box-shadow: 6px 6px 40px #87de73;
   background-image: linear-gradient(135deg, #a0e590, #55cc83);
 }
+
 .cards-wrapper .card#thankyou p {
   font-size: 18px;
   color: white;
@@ -138,6 +203,7 @@ body {
 .stepper.state-email .progress .ball-wrapper.email .ball-name {
   color: #9e9aff;
 }
+
 .stepper.state-email .progress .ball-wrapper.email .ball {
   background: #9e9aff;
 }
@@ -146,10 +212,12 @@ body {
 .stepper.state-password .progress .ball-wrapper.password .ball-name {
   color: #9e9aff;
 }
+
 .stepper.state-password .progress .ball-wrapper.email .ball,
 .stepper.state-password .progress .ball-wrapper.password .ball {
   background: #9e9aff;
 }
+
 .stepper.state-password .progress .bar.password {
   background: #9e9aff;
 }
@@ -159,11 +227,13 @@ body {
 .stepper.state-submit .progress .ball-wrapper.submit .ball-name {
   color: #9e9aff;
 }
+
 .stepper.state-submit .progress .ball-wrapper.email .ball,
 .stepper.state-submit .progress .ball-wrapper.password .ball,
 .stepper.state-submit .progress .ball-wrapper.submit .ball {
   background: #9e9aff;
 }
+
 .stepper.state-submit .progress .bar.password,
 .stepper.state-submit .progress .bar.submit {
   background: #9e9aff;
@@ -174,49 +244,78 @@ body {
 .stepper.state-thankyou .progress .ball-wrapper.submit .ball-name {
   color: #57d06d;
 }
+
 .stepper.state-thankyou .progress .ball-wrapper.email .ball,
 .stepper.state-thankyou .progress .ball-wrapper.password .ball,
 .stepper.state-thankyou .progress .ball-wrapper.submit .ball {
   background: #57d06d;
 }
+
 .stepper.state-thankyou .progress .bar.password,
 .stepper.state-thankyou .progress .bar.submit {
   background: #57d06d;
 }
 
 .stepper.state-email #email {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
 }
+
 .stepper.state-email #password {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  box-shadow: none;
-  transform: rotateY(180deg);
-  backface-visibility: hidden;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
+
 .stepper.state-email #submit {
   display: none;
 }
+
 .stepper.state-email #thankyou {
   display: none;
 }
 
 .stepper.state-password #email {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  box-shadow: none;
-  transform: rotateY(-180deg);
-  backface-visibility: hidden;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
+
 .stepper.state-password #password {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
 }
+
 .stepper.state-password #submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  box-shadow: none;
-  transform: rotateY(180deg);
-  backface-visibility: hidden;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: rotateX(-180deg);
+          transform: rotateX(-180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
+
 .stepper.state-password #thankyou {
   display: none;
 }
@@ -224,36 +323,64 @@ body {
 .stepper.state-submit #email {
   display: none;
 }
+
 .stepper.state-submit #password {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  box-shadow: none;
-  transform: rotateY(-180deg);
-  backface-visibility: hidden;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
+
 .stepper.state-submit #submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
 }
+
 .stepper.state-submit #thankyou {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  box-shadow: none;
-  transform: rotateY(180deg);
-  backface-visibility: hidden;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .stepper.state-thankyou #email {
   display: none;
 }
+
 .stepper.state-thankyou #password {
   display: none;
 }
+
 .stepper.state-thankyou #submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  box-shadow: none;
-  transform: rotateY(-180deg);
-  backface-visibility: hidden;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: rotateX(-180deg);
+          transform: rotateX(-180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
+
 .stepper.state-thankyou #thankyou {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
 }
+/*# sourceMappingURL=style.css.map */

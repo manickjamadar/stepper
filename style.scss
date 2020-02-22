@@ -37,6 +37,18 @@ $submit-button-color: #ff5f5f;
   transform: rotateY(180deg);
   backface-visibility: hidden;
 }
+@mixin top-face {
+  display: flex;
+  box-shadow: none;
+  transform: rotateX(180deg);
+  backface-visibility: hidden;
+}
+@mixin bottom-face {
+  display: flex;
+  box-shadow: none;
+  transform: rotateX(-180deg);
+  backface-visibility: hidden;
+}
 
 body {
   margin: 0px;
@@ -283,7 +295,7 @@ body {
     @include front-face;
   }
   #submit {
-    @include right-face;
+    @include bottom-face;
   }
   #thankyou {
     display: none;
@@ -294,13 +306,13 @@ body {
     display: none;
   }
   #password {
-    @include left-face;
+    @include top-face;
   }
   #submit {
     @include front-face;
   }
   #thankyou {
-    @include right-face;
+    @include top-face;
   }
 }
 .stepper.state-thankyou {
@@ -311,7 +323,7 @@ body {
     display: none;
   }
   #submit {
-    @include left-face;
+    @include bottom-face;
   }
   #thankyou {
     @include front-face;
