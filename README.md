@@ -37,7 +37,7 @@ Contributions to the Stepper Form Challenge are more than welcome! If you encoun
 The Stepper Form Challenge is open-source and released under the MIT License. Feel free to use, modify, and distribute this project as per the terms of the license.
 
 ## Contact
-If you have any questions or inquiries about the Stepper Form Challenge, please feel free to contact me at manickjamadar@gmail.com. I'm always excited to discuss potential collaborations or new opportunities.
+If you have any questions or inquiries about the Stepper Form Challenge, please feel free to contact me at [contact@manickjamadar.com](mailto:contact@manickjamadar.com). I'm always excited to discuss potential collaborations or new opportunities.
 
 Thank you for considering my Stepper Form Challenge as an impressive demonstration of my skills. I look forward to the opportunity of working together and contributing to future projects.
 
